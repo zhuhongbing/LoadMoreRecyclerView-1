@@ -7,7 +7,6 @@ import android.view.ViewStub;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import com.zss.library.R;
 
 /**

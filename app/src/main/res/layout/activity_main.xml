@@ -1,48 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.SwipeRefreshLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/swipeLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <Button
+        android:id="@+id/linearBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_margin="@dimen/dimen_8dp"
+        android:text="线性布局RecyclerView下拉刷新、加载更多"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+    <Button
+        android:id="@+id/gridBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_8dp"
+        android:text="网格布局RecyclerView下拉刷新、加载更多"/>
 
-            <Button
-                android:id="@+id/linearBtn"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="LinearLayout"/>
+    <Button
+        android:id="@+id/staggeredBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_8dp"
+        android:text="交错网格布局RecyclerView下拉刷新、加载更多"/>
 
-            <Button
-                android:id="@+id/gridBtn"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="GridLayout"/>
+    <Button
+        android:id="@+id/adapterBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_8dp"
+        android:text="公用适配器RecyclerView用法"/>
 
-            <Button
-                android:id="@+id/staggeredBtn"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="StaggeredGridLayout"/>
+    <Button
+        android:id="@+id/headerFooterBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_8dp"
+        android:text="头部和底部RecyclerView用法"/>
 
-        </LinearLayout>
-
-        <FrameLayout
-            android:id="@+id/frameLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
-
-</android.support.v4.widget.SwipeRefreshLayout>
+</LinearLayout>

@@ -51,6 +51,7 @@ public class RecyclerAdapterWrapper extends RecyclerView.Adapter<ViewHolder> {
         if (header == null) {
            return;
         }
+        //getItemViewType避免与真实的适配器里面getItemViewType冲突
         mHeaderViews.put(mHeaderViews.size() + TYPE_HEADER_VIEW, header);
         this.notifyDataSetChanged();
     }
@@ -59,6 +60,7 @@ public class RecyclerAdapterWrapper extends RecyclerView.Adapter<ViewHolder> {
         if (footer == null) {
             return;
         }
+        //getItemViewType避免与真实的适配器里面getItemViewType冲突
         mFooterViews.put(mHeaderViews.size() + TYPE_FOOTER_VIEW, footer);
         this.notifyDataSetChanged();
     }

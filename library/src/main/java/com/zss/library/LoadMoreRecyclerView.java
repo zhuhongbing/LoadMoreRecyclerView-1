@@ -1,7 +1,6 @@
 package com.zss.library;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -35,12 +34,12 @@ public class LoadMoreRecyclerView extends RecyclerView{
         init();
     }
 
-    public LoadMoreRecyclerView(Context context, @Nullable AttributeSet attrs) {
+    public LoadMoreRecyclerView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public LoadMoreRecyclerView(Context context, @Nullable AttributeSet attrs, int defStyle) {
+    public LoadMoreRecyclerView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init();
     }
@@ -142,6 +141,14 @@ public class LoadMoreRecyclerView extends RecyclerView{
 
     public void setState(LoadingFooter.State status, boolean showView) {
         loadingFooter.setState(status, showView);
+    }
+
+    public void setTheEnd(){
+        loadingFooter.setState(LoadingFooter.State.TheEnd);
+    }
+
+    public void setLoadingComplete(){
+        loadingFooter.setState(LoadingFooter.State.LoadComplete);
     }
 
     public void setNetWorkErrorReloadHandler(View.OnClickListener listener){
