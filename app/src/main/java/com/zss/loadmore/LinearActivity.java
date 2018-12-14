@@ -49,7 +49,7 @@ public class LinearActivity extends AppCompatActivity {
 
         recyclerView = (LoadMoreRecyclerView)findViewById(R.id.recyclerView);
 
-        //设置线性布局
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
     }

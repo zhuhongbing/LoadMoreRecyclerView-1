@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.zss.library.RecyclerAdapterWrapper;
@@ -31,7 +32,7 @@ public class HeaderFooterActivity extends AppCompatActivity {
     public void initView() {
         recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
         //设置线性布局
-        LinearLayoutManager mLayoutManager = new GridLayoutManager(this, 1);
+        LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(mLayoutManager);
 
         CommonAdapter<MsgModel> adapter = new CommonAdapter<MsgModel>(R.layout.item_adapter) {
@@ -49,8 +50,12 @@ public class HeaderFooterActivity extends AppCompatActivity {
             }
         };
         RecyclerAdapterWrapper adapterWrapper = new RecyclerAdapterWrapper(adapter);
-        adapterWrapper.addHeaderView(new ItemHeader(this));
-        adapterWrapper.addFooterView(new ItemFooter(this));
+        ItemHeader header = new ItemHeader(this);
+        header.setLayoutParams(new RecyclerView.LayoutParams(RecyclerView.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        ItemFooter footer = new ItemFooter(this);
+        footer.setLayoutParams(new RecyclerView.LayoutParams(RecyclerView.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        adapterWrapper.addHeaderView(header);
+        adapterWrapper.addFooterView(footer);
         recyclerView.setAdapter(adapterWrapper);
         adapter.addAll(getData());
     }

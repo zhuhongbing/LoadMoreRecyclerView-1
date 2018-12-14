@@ -89,7 +89,7 @@ public class StaggerdActivity extends AppCompatActivity {
                     public void run() {
                         pageIndex = 0;
                         adapter.replaceAll(getData());
-                        swipeRefreshLayout.setRefreshing(false); //加载完成
+                        swipeRefreshLayout.setRefreshing(false);
                     }
                 }, 1000);
 
@@ -108,7 +108,7 @@ public class StaggerdActivity extends AppCompatActivity {
                         public void run() {
                             pageIndex++;
                             adapter.addAll(getData());
-                            recyclerView.setLoadingComplete();
+                            recyclerView.setLoadingComplete(); //加载完成
                         }
                     }, 1000);
                 }
