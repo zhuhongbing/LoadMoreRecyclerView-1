@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">library</string>
-    <string name="loadmore_loading">加载中</string>
-    <string name="loadmore_footer_end">已经到底了</string>
-    <string name="loadmore_network_error">网络错误，点击重试</string>
+
+    <string name="loadmore_loading">Loading</string>
+    <string name="loadmore_footer_end">This is the bottom</string>
+    <string name="loadmore_network_error">Network error, click to Retry</string>
 
 </resources>

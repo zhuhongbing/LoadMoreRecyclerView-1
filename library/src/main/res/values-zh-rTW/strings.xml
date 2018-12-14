@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="loadmore_loading">載入中</string>
+    <string name="loadmore_footer_end">已經到底了</string>
+    <string name="loadmore_network_error">網路錯誤，點擊重試</string>
+
+</resources>
