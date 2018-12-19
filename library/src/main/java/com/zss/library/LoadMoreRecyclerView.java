@@ -138,22 +138,20 @@ public class LoadMoreRecyclerView extends RecyclerView{
         loadingFooter.setState(status);
     }
 
-
     public void setState(LoadingFooter.State status, boolean showView) {
         loadingFooter.setState(status, showView);
     }
 
-    public void setTheEnd(){
-        loadingFooter.setState(LoadingFooter.State.TheEnd);
+    public void setNoMoreData(boolean showView){
+        loadingFooter.setState(LoadingFooter.State.TheEnd, showView);
     }
 
-    public void setLoadingComplete(){
-        loadingFooter.setState(LoadingFooter.State.LoadComplete);
-    }
-
-    public void setNetWorkErrorReloadHandler(View.OnClickListener listener){
+    public void setNetWorkError(View.OnClickListener listener){
         loadingFooter.setOnClickListener(listener);
         loadingFooter.setState(LoadingFooter.State.NetWorkError);
     }
 
+    public void setLoadComplete(){
+        loadingFooter.setState(LoadingFooter.State.LoadComplete);
+    }
 }

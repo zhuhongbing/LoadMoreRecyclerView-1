@@ -26,7 +26,7 @@ public class LinearActivity extends AppCompatActivity {
     private LoadMoreRecyclerView recyclerView;
     private CommonAdapter adapter;
     private int pageIndex = 0;
-    private int pageSize = 20;
+    private int pageSize = 5;
     private Handler mHandler = new Handler();
 
     @Override
@@ -90,14 +90,14 @@ public class LinearActivity extends AppCompatActivity {
             @Override
             public void onLoadMore() {
                 if(pageIndex >= 2){
-                    recyclerView.setTheEnd(); //已经到底了
+                    recyclerView.setNoMoreData(true); //已经到底了
                 }else{
                     mHandler.postDelayed(new Runnable() { //延时1秒，模拟数据
                         @Override
                         public void run() {
                             pageIndex++;
                             adapter.addAll(getData());
-                            recyclerView.setLoadingComplete(); //加载完成
+                            recyclerView.setLoadComplete(); //加载完成
                         }
                     }, 1000);
                 }

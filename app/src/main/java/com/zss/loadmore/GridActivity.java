@@ -89,14 +89,14 @@ public class GridActivity extends AppCompatActivity {
             @Override
             public void onLoadMore() {
                 if(pageIndex >= 2){
-                    recyclerView.setTheEnd(); //已经到底了
+                    recyclerView.setNoMoreData(true); //已经到底了
                 }else{
                     mHandler.postDelayed(new Runnable() { //延时1秒，模拟数据
                         @Override
                         public void run() {
                             pageIndex++;
                             adapter.addAll(getData());
-                            recyclerView.setLoadingComplete(); //加载完成
+                            recyclerView.setLoadComplete(); //加载完成
                         }
                     }, 1000);
                 }
